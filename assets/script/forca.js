@@ -216,7 +216,7 @@ function comparaListas(letra) {
     let vitoria = true;
     for(i = 0; i < palavraSecretaRandomizada.length; i++) {
         if (palavraSecretaRandomizada[i] != listaDinamica[i]) {
-
+            vitoria = false;
         }
     }
     
