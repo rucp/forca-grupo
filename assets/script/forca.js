@@ -187,17 +187,24 @@ mostrarNoBrowser();
 
 function verificarLetra(letra) {
     if (tent > 0) {
-        mudarEstilo("tecla-" + letra);
+        mudarEstilo("letra-" + letra);
         comparaListas(letra);
+        mostrarNoBrowser()
     }
+}
+
+function mudarEstilo(teclas) {
+    document.getElementById(teclas).style.background = "#FF8C00";
+    document.getElementById(teclas).style.color = "white";
 }
 
 function comparaListas(letra) {
     const posicao = palavraSecretaRandomizada.indexOf(letra);
-    if (posicao < 0) {
-        tent--
-        // aparecer imagem
-        // se tent = 0 >> mostrar mensagem
+    if(posicao < 0) {
+        tent--;
+        // caregar imagem
+    
+        // verificar se há tentativas
     } else {
         for(i = 0; i < palavraSecretaRandomizada.length; i++) {
             if(palavraSecretaRandomizada[i] == letra) {
@@ -205,22 +212,16 @@ function comparaListas(letra) {
             }
         }
     }
-
+    
     let vitoria = true;
-    for (i = 0; palavraSecretaRandomizada.length; i++) {
+    for(i = 0; i < palavraSecretaRandomizada.length; i++) {
         if (palavraSecretaRandomizada[i] != listaDinamica[i]) {
-            vitoria = false;
+
         }
     }
-
-    if(vitoria == true)
-   {
-       // mensagem que ganhou
-       tentativas = 0;
-   }
-}
-
-function mudarEstilo(teclas) {
-    document.getElementById(teclas).style.background = "#38d5";
-    document.getElementById(teclas).style.color = "white";
+    
+    if(vitoria == true) {
+        // mensagem que ganhou
+        tent = 0;
+    }
 }
