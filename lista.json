@@ -1,0 +1,155 @@
+[
+    {
+        "nome": "AMORA",
+        "categoria": "Frutas",
+        "xp": 5
+    },
+    {
+        "nome": "BANANA",
+        "categoria": "FRUTAS",
+        "xp": 6
+    },
+    {
+        "nome": "CARAMBOLA",
+        "categoria": "FRUTAS",
+        "xp": 9
+    },
+    {
+        "nome": "DAMASCO",
+        "categoria": "FRUTAS",
+        "xp": 7
+    },
+    {
+        "nome": "FIGO",
+        "categoria": "FRUTAS",
+        "xp": 4
+    },
+    {
+        "nome": "JACA",
+        "categoria": "FRUTAS",
+        "xp": 4
+    },
+    {
+        "nome": "KIWI",
+        "categoria": "FRUTAS",
+        "xp": 4
+    },
+    {
+        "nome": "LARANJA",
+        "categoria": "FRUTAS",
+        "xp": 7
+    },
+    {
+        "nome": "MAMAO",
+        "categoria": "FRUTAS",
+        "xp": 5
+    }, 
+    {
+        "nome": "PERA",
+        "categoria": "FRUTAS",
+        "xp": 4
+    },
+    {
+        "nome": "GATO",
+        "categoria": "ANIMAL",
+        "xp": 4
+    },
+    {
+        "nome": "CAPIVARA",
+        "categoria": "ANIMAL",
+        "xp": 8
+    },
+    {
+        "nome": "VACA",
+        "categoria": "ANIMAL",
+        "xp": 4
+    },
+    {
+        "nome": "CAVALO",
+        "categoria": "ANIMAL",
+        "xp": 6
+    },
+    {
+        "nome": "MACACO",
+        "categoria": "ANIMAL",
+        "xp": 6
+    },
+
+    {
+        "nome": "BORBOLETA",
+        "categoria": "ANIMAL",
+        "xp": 9
+    },
+    
+    {
+        "nome": "MINHOCA",
+        "categoria": "ANIMAL",
+        "xp": 7
+    },
+    
+    {
+        "nome": "CACHORRO",
+        "categoria": "ANIMAL",
+        "xp": 8
+    },
+    {
+        "nome": "BOI",
+        "categoria": "ANIMAL",
+        "xp": 3
+    },
+    {
+        "nome": "PORCO",
+        "categoria": "ANIMAL",
+        "xp": 5
+    },
+    {
+        "nome": "BEATLES",
+        "categoria": "MUSICA",
+        "xp": 5
+    },
+    {
+        "nome": "METALLICA",
+        "categoria": "MUSICA",
+        "xp": 5
+    },
+    {
+        "nome": "CREAM",
+        "categoria": "MUSICA",
+        "xp": 5
+    },
+    {
+        "nome": "MISFITS",
+        "categoria": "MUSICA",
+        "xp": 5
+    },
+    {
+        "nome": "PAINKILLER",
+        "categoria": "MUSICA",
+        "xp": 5
+    },
+    {
+        "nome": "SLAYER",
+        "categoria": "MUSICA",
+        "xp": 5
+    },
+    {
+        "nome": "ANTHRAX",
+        "categoria": "MUSICA",
+        "xp": 5
+    },
+    {
+        "nome": "PANTERA",
+        "categoria": "MUSICA",
+        "xp": 5
+    },
+    {
+        "nome": "RAMONES",
+        "categoria": "MUSICA",
+        "xp": 5
+    },
+    {
+        "nome": "MUTANTES",
+        "categoria": "MUSICA",
+        "xp": 5
+    }
+]

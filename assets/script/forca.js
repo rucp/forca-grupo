@@ -1,6 +1,7 @@
 let tent = 6;
 let listaDinamica = [];
 let categoriaPalavraSecreta;
+const letrasErradas = [];
 let palavraSecretaRandomizada;
 
 const elementos = [
@@ -104,7 +105,7 @@ const elementos = [
     },
     elemento020 = {
         nome: "PORCO",
-        catergoria: "ANIMAL",
+        categoria: "ANIMAL",
         xp: 5
     },
     elemento021 = {
@@ -164,6 +165,7 @@ function randomizarPalavraSecreta() {
 
     categoriaPalavraSecreta = elementos[indice].categoria;
     palavraSecretaRandomizada = elementos[indice].nome;
+    xp = elementos[indice].xp;
 }
 randomizarPalavraSecreta();
 
@@ -186,10 +188,11 @@ function mostrarNoBrowser() {
 mostrarNoBrowser();
 
 function verificarLetra(letra) {
+    document.getElementById("letra-" + letra).disabled = true;
     if (tent > 0) {
         mudarEstilo("letra-" + letra);
         comparaListas(letra);
-        mostrarNoBrowser()
+        mostrarNoBrowser();
     }
 }
 
@@ -201,10 +204,13 @@ function mudarEstilo(teclas) {
 function comparaListas(letra) {
     const posicao = palavraSecretaRandomizada.indexOf(letra);
     if(posicao < 0) {
-        tent--;
-        // caregar imagem
-    
-        // verificar se há tentativas
+        tent--
+        letrasErradas.push(letra)
+        carregarForca();
+        
+        if(tent == 0) {
+            frase.innerHTML = `Você perdeu! Tente novamente!`
+        }
     } else {
         for(i = 0; i < palavraSecretaRandomizada.length; i++) {
             if(palavraSecretaRandomizada[i] == letra) {
@@ -221,7 +227,15 @@ function comparaListas(letra) {
     }
     
     if(vitoria == true) {
-        // mensagem que ganhou
-        tent = 0;
+        frase.innerHTML = `Parabéns, você ganhou! <br>Clique em + para continuar jogando`
+        // tent = 0;
+        
+    }
+}
+
+function carregarForca() {
+        const partes__corpo = document.querySelectorAll(".partes-corpo")
+        for(let i = 0; i < letrasErradas.length; i++) {
+            partes__corpo[i].style.display = "block"
     }
 }

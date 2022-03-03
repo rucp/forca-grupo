@@ -11,9 +11,10 @@
 <body>
     <header>
             <h1 class="titulo">Jogo da Forca</h1>
-        <div class="xp">
+            <div class="xp">
             <h2>xp</h2>
             <i class="las la-user-circle user-icon"></i>
+            <div id="pontos"></div>
         </div>
         
     </header>
@@ -32,7 +33,7 @@
                 <line x1="140" y1="20" x2="140" y2="50"/>
                 <line x1="60" y1="20" x2="60" y2="230"/>
                 <line x1="20" y1="230" x2="100" y2="230"/>
-                <!-- Cabecaça -->
+                <!-- Cabeça -->
                 <circle cx="140" cy="70" r="20" class="partes-corpo" fill="white"/>
                 <!-- Corpo -->
                 <line x1="140" y1="90" x2="140" y2="150" class="partes-corpo"/>
@@ -86,11 +87,13 @@
                 <button id="letra-B" onclick="verificarLetra('B')">B</button>
                 <button id="letra-N" onclick="verificarLetra('N')">N</button>
                 <button id="letra-M" onclick="verificarLetra('M')">M</button>
-                <button id="restart">+</button>
+                <button id="restart" onclick="jogarMais()">+</button>
             </div>
         </div>
         <div class="frase-final">
-            <div id="frase-final">Você perdeu!</div>
+            <div id="frase">
+                
+            </div>
         </div>
     </div>
     
