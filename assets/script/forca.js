@@ -1,239 +1,104 @@
-let tent = 6;
-let listaDinamica = [];
-let categoriaPalavraSecreta;
+let tent = 6; 
+let listaDinamica = []; 
+let categoriaPalavraSecreta; 
+let palavraSecretaRandomizada; 
+let elementos; 
 const letrasErradas = [];
-let palavraSecretaRandomizada;
+let pontuacao = 0;
 
-const elementos = [
-    elemento001 = {
-        nome: "AMORA",
-        categoria: "Frutas",
-        xp: 5
-    },
-    elemento002 = {
-        nome: "BANANA",
-        categoria: "FRUTAS",
-        xp: 6
-    },
-    elemento003 = {
-        nome: "CARAMBOLA",
-        categoria: "FRUTAS",
-        xp: 9
-    },
-    elemento004 = {
-        nome: "DAMASCO",
-        categoria: "FRUTAS",
-        xp: 7
-    },
-    elemento005 = {
-        nome: "FIGO",
-        categoria: "FRUTAS",
-        xp: 4
-    },
-    elemento006 = {
-        nome: "JACA",
-        categoria: "FRUTAS",
-        xp: 4
-    },
-    elemento007 = {
-        nome: "KIWI",
-        categoria: "FRUTAS",
-        xp: 4
-    },
-    elemento008 = {
-        nome: "LARANJA",
-        categoria: "FRUTAS",
-        xp: 7
-    },
-    elemento009 = {
-        nome: "MAMAO",
-        categoria: "FRUTAS",
-        xp: 5
-    }, 
-    elemento010 = {
-        nome: "PERA",
-        categoria: "FRUTAS",
-        xp: 4
-    },
-    elemento011 = {
-        nome: "GATO",
-        categoria: "ANIMAL",
-        xp: 4
-    },
-    elemento012 = {
-        nome: "CAPIVARA",
-        categoria: "ANIMAL",
-        xp: 8
-    },
-    elemento013 = {
-        nome: "VACA",
-        categoria: "ANIMAL",
-        xp: 4
-    },
-    elemento014 = {
-        nome: "CAVALO",
-        categoria: "ANIMAL",
-        xp: 6
-    },
-    elemento015 = {
-        nome: "MACACO",
-        categoria: "ANIMAL",
-        xp: 6
-    },
 
-    elemento016 = {
-        nome: "BORBOLETA",
-        categoria: "ANIMAL",
-        xp: 9
-    },
-    
-    elemento017 = {
-        nome: "MINHOCA",
-        categoria: "ANIMAL",
-        xp: 7
-    },
-    
-    elemento018 = {
-        nome: "CACHORRO",
-        categoria: "ANIMAL",
-        xp: 8
-    },
-    elemento019 = {
-        nome: "BOI",
-        categoria: "ANIMAL",
-        xp: 3
-    },
-    elemento020 = {
-        nome: "PORCO",
-        categoria: "ANIMAL",
-        xp: 5
-    },
-    elemento021 = {
-        nome: "BEATLES",
-        categoria: "MUSICA",
-        xp: 5
-    },
-    elemento022 = {
-        nome: "METALLICA",
-        categoria: "MUSICA",
-        xp: 5
-    },
-    elemento023 = {
-        nome: "CREAM",
-        categoria: "MUSICA",
-        xp: 5
-    },
-    elemento024 = {
-        nome: "MISFITS",
-        categoria: "MUSICA",
-        xp: 5
-    },
-    elemento025 = {
-        nome: "PAINKILLER",
-        categoria: "MUSICA",
-        xp: 5
-    },
-    elemento026 = {
-        nome: "SLAYER",
-        categoria: "MUSICA",
-        xp: 5
-    },
-    elemento027 = {
-        nome: "ANTHRAX",
-        categoria: "MUSICA",
-        xp: 5
-    },
-    elemento028 = {
-        nome: "PANTERA",
-        categoria: "MUSICA",
-        xp: 5
-    },
-    elemento029 = {
-        nome: "RAMONES",
-        categoria: "MUSICA",
-        xp: 5
-    },
-    elemento030 = {
-        nome: "MUTANTES",
-        categoria: "MUSICA",
-        xp: 5
-    }
-]
-
-function randomizarPalavraSecreta() {
-    let indice = parseInt(Math.random() * elementos.length);
-
-    categoriaPalavraSecreta = elementos[indice].categoria;
-    palavraSecretaRandomizada = elementos[indice].nome;
-    xp = elementos[indice].xp;
-}
-randomizarPalavraSecreta();
-
-function mostrarNoBrowser() {
-    let categoria = document.querySelector(".categoria");
-    categoria.innerHTML = categoriaPalavraSecreta;
-
-    let palavra = document.querySelector(".palavra-secreta");
-    palavra.innerHTML = "";
-
-    for(i = 0; i < palavraSecretaRandomizada.length; i++) {
-        if(listaDinamica[i] == undefined) {
+function mostrarNoBrowser() { 
+    let categoria = document.querySelector(".categoria"); 
+    categoria.innerHTML = categoriaPalavraSecreta; 
+ 
+    let palavra = document.querySelector(".palavra-secreta"); 
+    palavra.innerHTML = ""; 
+ 
+    for (i = 0; i < palavraSecretaRandomizada.length; i++) { 
+        if (listaDinamica[i] == undefined) { 
             listaDinamica[i] = "&nbsp;" 
             palavra.innerHTML = palavra.innerHTML + `<div class="letras">${listaDinamica[i]}</div>`
-        } else {
-            palavra.innerHTML = palavra.innerHTML + `<div class="letras">${listaDinamica[i]}</div>`
-        }
-    }
-}
-mostrarNoBrowser();
+        } else { 
+            palavra.innerHTML = palavra.innerHTML + `<div class="letras">${listaDinamica[i]}</div> `
+        } 
+    } 
+} 
 
-function verificarLetra(letra) {
-    document.getElementById("letra-" + letra).disabled = true;
-    if (tent > 0) {
-        mudarEstilo("letra-" + letra);
-        comparaListas(letra);
+function restart() {
+    location.reload();
+}
+ 
+fetch("/assets/script/lista.json") 
+    .then(response => { 
+        return response.json(); 
+    }) 
+    .then(jsondata => { 
+        elementos = jsondata; 
+ 
+        function randomizarPalavraSecreta(elementos) { 
+            let indice = parseInt(Math.random() * elementos.length); 
+ 
+            categoriaPalavraSecreta = elementos[indice].categoria; 
+            palavraSecretaRandomizada = elementos[indice].nome; 
+            pontuacao = elementos[indice].xp;
+            console.log(pontuacao);
+        } 
+        randomizarPalavraSecreta(elementos); 
         mostrarNoBrowser();
-    }
-}
 
-function mudarEstilo(teclas) {
-    document.getElementById(teclas).style.background = "#FF8C00";
-    document.getElementById(teclas).style.color = "white";
-}
-
-function comparaListas(letra) {
-    const posicao = palavraSecretaRandomizada.indexOf(letra);
-    if(posicao < 0) {
-        tent--
-        letrasErradas.push(letra)
-        carregarForca();
-        
-        if(tent == 0) {
-            frase.innerHTML = `Você perdeu! Tente novamente!`
-        }
-    } else {
-        for(i = 0; i < palavraSecretaRandomizada.length; i++) {
-            if(palavraSecretaRandomizada[i] == letra) {
-                listaDinamica[i] = letra;
+    }); 
+ 
+    
+    function comparaListas(letra) { 
+        const posicao = palavraSecretaRandomizada.indexOf(letra); 
+        if (posicao < 0) { 
+            letrasErradas.push(letra)
+            tent--; 
+            carregarForca(letrasErradas);
+ 
+            if(tent == 0) {
+                frase.innerHTML = `A palavra secreta era ${palavraSecretaRandomizada}. <br> Clique em ► e jogue novamente.`
             }
-        }
+        } else { 
+            for (i = 0; i < palavraSecretaRandomizada.length; i++) { 
+                if (palavraSecretaRandomizada[i] == letra) { 
+                    listaDinamica[i] = letra; 
+                } 
+            } 
+        } 
+ 
+        let vitoria = true; 
+        for (i = 0; i < palavraSecretaRandomizada.length; i++) { 
+            if (palavraSecretaRandomizada[i] != listaDinamica[i]) { 
+                vitoria = false; 
+            } 
+        } 
+ 
+        if (vitoria == true) { 
+            frase.innerHTML = `<b>Parabéns, você ganhou!</b> <br>Clique em ► e jogue novamente.`
+            tent = 0;
+            pontos.innerHTML = pontos.innerHTML + pontuacao;
+        } 
+    } 
+ 
+     
+    function mudarEstilo(teclas) { 
+        document.getElementById(teclas).style.background = "#FF8C00"; 
+        document.getElementById(teclas).style.color = "white"; 
+    } 
+ 
+ 
+ 
+    function verificarLetra(letra) { 
+        document.getElementById("letra-" + letra).disabled = true;
+        if (tent > 0) { 
+            mudarEstilo("letra-" + letra); 
+            comparaListas(letra); 
+            mostrarNoBrowser()
+        } 
     }
-    
-    let vitoria = true;
-    for(i = 0; i < palavraSecretaRandomizada.length; i++) {
-        if (palavraSecretaRandomizada[i] != listaDinamica[i]) {
-            vitoria = false;
-        }
-    }
-    
-    if(vitoria == true) {
-        frase.innerHTML = `Parabéns, você ganhou! <br>Clique em + para continuar jogando`
-        // tent = 0;
-        
-    }
-}
 
-function carregarForca() {
+    function carregarForca(letrasErradas) {
         const partes__corpo = document.querySelectorAll(".partes-corpo")
         for(let i = 0; i < letrasErradas.length; i++) {
             partes__corpo[i].style.display = "block"

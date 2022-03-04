@@ -1,7 +1,7 @@
 [
     {
         "nome": "AMORA",
-        "categoria": "Frutas",
+        "categoria": "FRUTAS",
         "xp": 5
     },
     {
@@ -104,52 +104,52 @@
     },
     {
         "nome": "BEATLES",
-        "categoria": "MUSICA",
+        "categoria": "MÚSICA",
         "xp": 5
     },
     {
         "nome": "METALLICA",
-        "categoria": "MUSICA",
+        "categoria": "MÚSICA",
         "xp": 5
     },
     {
         "nome": "CREAM",
-        "categoria": "MUSICA",
+        "categoria": "MÚSICA",
         "xp": 5
     },
     {
         "nome": "MISFITS",
-        "categoria": "MUSICA",
+        "categoria": "MÚSICA",
         "xp": 5
     },
     {
         "nome": "PAINKILLER",
-        "categoria": "MUSICA",
+        "categoria": "MÚSICA",
         "xp": 5
     },
     {
         "nome": "SLAYER",
-        "categoria": "MUSICA",
+        "categoria": "MÚSICA",
         "xp": 5
     },
     {
         "nome": "ANTHRAX",
-        "categoria": "MUSICA",
+        "categoria": "MÚSICA",
         "xp": 5
     },
     {
         "nome": "PANTERA",
-        "categoria": "MUSICA",
+        "categoria": "MÚSICA",
         "xp": 5
     },
     {
         "nome": "RAMONES",
-        "categoria": "MUSICA",
+        "categoria": "MÚSICA",
         "xp": 5
     },
     {
         "nome": "MUTANTES",
-        "categoria": "MUSICA",
+        "categoria": "MÚSICA",
         "xp": 5
     }
 ]

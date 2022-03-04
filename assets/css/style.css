@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -5,29 +7,45 @@
     box-sizing: border-box;
 }
 
+body {
+    font-family: 'Syne Mono';
+}
+
 header {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: center;
 }
 
 .titulo {
     display: flex;
     justify-content: center;
+    
 }
 
 .xp {
     display: flex;
+    position: absolute;
+    flex-direction: row;
     justify-content: flex-end;
     text-transform: uppercase;
     background-color: #ffffff;
     margin: 5px 0;
     padding: 2px 1px;
     border-radius: 3px;
+    box-shadow: 0px 0px 4px black;
+    margin-left: 25%;
+    margin-top: 3.2%;
 }
 
 .user-icon {
     font-size: 24px;
+}
+
+#pontos {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
 }
 
 .container {
@@ -40,6 +58,10 @@ header {
     padding: 10px 0px;
     width: 450px;
     margin: auto;
+}
+
+.categoria {
+    font-size: 25px;
 }
 
 .forca {
@@ -89,6 +111,10 @@ header {
     font-weight: bolder;
     box-shadow: 0px 0px 3px rgb(0, 0, 0);
     font-size: 11px;
+}
+
+#restart {
+    color: red;
 }
 
 .teclas button:hover{
