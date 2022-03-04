@@ -127,3 +127,16 @@ header {
 .frase-final {
     margin-top: 10px;
 }
+
+footer {
+    margin-top: 6px;
+    text-align: center;
+    font-size: 1rem;
+}
+
+a {
+    font-size: 0.8rem;
+    text-decoration: none;
+    color: #042940;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.171);
+}
