@@ -41,7 +41,6 @@ fetch("/assets/script/lista.json")
             categoriaPalavraSecreta = elementos[indice].categoria; 
             palavraSecretaRandomizada = elementos[indice].nome; 
             pontuacao = elementos[indice].xp;
-            console.log(pontuacao);
         } 
         randomizarPalavraSecreta(elementos); 
         mostrarNoBrowser();

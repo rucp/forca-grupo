@@ -20,7 +20,8 @@ header {
 .titulo {
     display: flex;
     justify-content: center;
-    
+    text-shadow: 1px 1px 1px rgba(220, 20, 60, 0.603);
+    margin-top: 70px;
 }
 
 .xp {
@@ -35,7 +36,7 @@ header {
     border-radius: 3px;
     box-shadow: 0px 0px 4px black;
     margin-left: 25%;
-    margin-top: 3.2%;
+    margin-top: 8.5%;
 }
 
 .user-icon {
@@ -58,10 +59,12 @@ header {
     padding: 10px 0px;
     width: 450px;
     margin: auto;
+    box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.493);
 }
 
 .categoria {
     font-size: 25px;
+    text-shadow: 1px 1px 1px white;
 }
 
 .forca {
