@@ -28,7 +28,7 @@ function restart() {
     location.reload();
 }
  
-fetch("/assets/script/lista.json") 
+fetch("./assets/data/lista.json") 
     .then(response => { 
         return response.json(); 
     }) 
